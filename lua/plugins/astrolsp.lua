@@ -34,9 +34,16 @@ return {
         -- "lua_ls",
       },
       timeout_ms = 1000, -- default format timeout
-      -- filter = function(client) -- fully override the default formatting function
-      --   return true
-      -- end
+      filter = function(client) -- fully override the default formatting function
+        -- disable formatting for lua_ls
+        if client.name == "lua_ls" then return false end
+
+        -- only enable null-ls for javascript files
+        if vim.bo.filetype == "javascript" then return client.name == "null-ls" end
+
+        -- enable all other clients
+        return true
+      end,
     },
     -- enable servers that you already have installed without mason
     servers = {
