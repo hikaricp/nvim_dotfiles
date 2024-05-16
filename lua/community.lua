@@ -13,5 +13,7 @@ return {
   { import = "astrocommunity.code-runner.executor-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
+  { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.completion.cmp-cmdline" },
   -- import/override with your plugins folder
 }
